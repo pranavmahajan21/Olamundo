@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="25dp" >
+
+    <!-- android:background="@drawable/custom_background_bluebox" -->
+
+    <FrameLayout
+        android:id="@+id/logoRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/loginlogo" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="117dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logoimage_rs" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/signIn_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoRL"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="35dp"
+        android:text="Sign in"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#263a70"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/emailRL"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/signIn_textView"
+        android:layout_below="@+id/signIn_textView"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/layer_list_blue" >
+
+        <!-- android:background="@drawable/custom_background_bluebox" -->
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="3dp"
+            android:layout_toLeftOf="@+id/clear_email_button"
+            android:background="@null"
+            android:textColor="@color/blue_dark_applevel"
+            android:hint="email"
+            android:inputType="textEmailAddress"
+            android:padding="4dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/clear_email_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="7dp"
+            android:background="@null"
+            android:onClick="onClearText"
+            android:scaleType="fitXY"
+            android:src="@drawable/cross_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/passwordRL"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/emailRL"
+        android:layout_alignRight="@+id/emailRL"
+        android:layout_below="@+id/emailRL"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/layer_list_blue" >
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/clear_password_button"
+            android:background="@null"
+            android:textColor="@color/blue_dark_applevel"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:padding="4dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/clear_password_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="7dp"
+            android:background="@null"
+            android:onClick="onClearText"
+            android:scaleType="fitXY"
+            android:src="@drawable/cross_button" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/loginImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailRL"
+        android:layout_below="@+id/passwordRL"
+        android:layout_marginTop="17dp"
+        android:background="@null"
+        android:onClick="onLogin"
+        android:src="@drawable/loginbutton" />
+
+    <TextView
+        android:id="@+id/forgot_pass_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginImageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:onClick="onForgotPassword"
+        android:text="forgot password?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#263a70"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/new_to_ola_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forgot_pass_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="55dp"
+        android:clickable="true"
+        android:text="New to Ola Mundo?"
+        android:textColor="#263a70"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/create_acc_button"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/new_to_ola_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#ef6a4d"
+        android:onClick="onCreateAccount"
+        android:text="Create account"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout><!-- android:textAppearance="?android:attr/textAppearanceSmall" -->

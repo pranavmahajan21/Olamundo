@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="transp">#06000000</color>
+    <color name="list_item_title">#fff</color>
+    <color name="blue_dark_applevel">#405581</color>
+    <color name="orange_applevel">#ee795b</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+
+</resources>

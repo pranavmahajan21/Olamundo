@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/custom_background_bluebox"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/chat_person_details_LL"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_toLeftOf="@+id/orangeCrossIB"
+        android:background="@drawable/custom_background_bluebox"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:clickable="true"
+        android:onClick="onProfileDetailsClick"
+        >
+<!-- android:clickable="true"  -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:layout_marginLeft="20dp"
+             >
+
+            <ImageView
+                android:id="@+id/circle_blue_IV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/circle_blue" />
+
+            <ImageView
+                android:id="@+id/imageView_profile_pic"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="nick_name"
+            android:textColor="#263a70"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/orangeCrossIB"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp" 
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/cross_orange"
+        android:onClick="onDeleteContact"
+        />
+<!--  -->
+</RelativeLayout>

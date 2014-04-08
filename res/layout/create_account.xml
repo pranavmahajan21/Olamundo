@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/create_account_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp" >
+
+    <TextView
+        android:id="@+id/header_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please fill the required details to \ncreate your family account"
+        android:textColor="#263a70"
+        android:textSize="18sp" />
+
+    <!-- android:background="@drawable/custom_background_bluebox" -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+
+        <ImageView
+            android:id="@+id/preview_uploaded_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/camera" />
+
+        <ImageButton
+            android:id="@+id/uploadImageCircle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:onClick="onUploadImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/circle_blue" />
+
+        <TextView
+            android:id="@+id/header_required_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="60dp"
+            android:text="(required)"
+            android:textColor="#848484" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/fullname_RL"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layer_list_blue"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/fullname_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/clear_fullname_imageButton"
+                android:background="@null"
+                android:hint="Full Name\t\t\t\t\t\t\t\t\t\t\t\t(required)"
+                android:paddingBottom="3dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
+                android:singleLine="true"
+                android:textColor="@color/blue_dark_applevel" />
+
+            <ImageButton
+                android:id="@+id/clear_fullname_imageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:onClick="onClearText"
+                android:scaleType="fitXY"
+                android:src="@drawable/cross_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nickname_RL"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layer_list_blue"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/nickname_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/clear_nickname_imageButton"
+                android:background="@null"
+                android:hint="Nick Name(eg. Dad,Tom)   (required)"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:singleLine="true"
+                android:textColor="@color/blue_dark_applevel" />
+
+            <ImageButton
+                android:id="@+id/clear_nickname_imageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:onClick="onClearText"
+                android:scaleType="fitXY"
+                android:src="@drawable/cross_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/email_RL"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layer_list_blue"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/email_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/clear_email_imageButton"
+                android:background="@null"
+                android:hint="Your email ID\t\t\t\t\t\t\t\t\t(required)"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="1dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="1dp"
+                android:singleLine="true"
+                android:textColor="@color/blue_dark_applevel" />
+
+            <ImageButton
+                android:id="@+id/clear_email_imageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:onClick="onClearText"
+                android:scaleType="fitXY"
+                android:src="@drawable/cross_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_RL"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layer_list_blue"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/password_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/clear_password_imageButton"
+                android:background="@null"
+                android:hint="Password\t\t\t\t\t\t\t\t\t\t\t\t(required)"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@color/blue_dark_applevel" />
+
+            <ImageButton
+                android:id="@+id/clear_password_imageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="2dp"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:onClick="onClearText"
+                android:scaleType="fitXY"
+                android:src="@drawable/cross_button" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp" >
+
+        <!-- android:orientation="horizontal" -->
+
+        <ImageButton
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:onClick="onBack"
+            android:scaleType="fitXY"
+            android:src="@drawable/back" />
+
+        <ImageButton
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="onNext"
+            android:scaleType="fitXY"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:src="@drawable/character_writing" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="68dp"
+            android:src="@drawable/chatheaderviewlines" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/line_register" />
+
+    <!--
+    android:layout_gravity="left"		android:layout_gravity="right" 
+    android:background="@drawable/custom_background_bluebox"
+    -->
+
+</LinearLayout>

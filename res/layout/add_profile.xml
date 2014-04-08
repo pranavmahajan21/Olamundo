@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_profile_LL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343434"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="110dp" >
+<!-- @drawable/custom_background_bluebox -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/custom_background_bluebox" >
+
+        <ImageView
+            android:id="@+id/preview_uploaded_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/camera" />
+
+        <ImageButton
+            android:id="@+id/uploadImageCircle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:onClick="onUploadImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/circle_blue" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/fullname_RL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/custom_background_bluebox"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/fullname_edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/clear_fullname_imageButton"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:hint="Full Name"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/clear_fullname_imageButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:onClick="onClearText"
+            android:scaleType="fitXY"
+            android:src="@drawable/cross_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lastname_RL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_background_bluebox"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/relation_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/clear_relation_imageButton"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:hint="Last Name"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/clear_relation_imageButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:onClick="onClearText"
+            android:scaleType="fitXY"
+            android:src="@drawable/cross_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_background_bluebox" >
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="5dp"
+            android:background="@color/orange_applevel"
+            android:onClick="onCancel"
+            android:text="Cancel"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:background="@color/blue_dark_applevel"
+            android:onClick="onSave"
+            android:text="Save"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</LinearLayout>
