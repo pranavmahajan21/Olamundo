@@ -219,30 +219,28 @@ public class LoginPageActivity extends Activity {
 	}
 
 	private class LoginAsyncTask extends AsyncTask<String, Void, Void> {
-		public void postMethod2() {
-			String url = GlobalVariable.URL + GlobalVariable.SIGN_IN + ".json";
-			System.out.println("url is   : " + url);
-			JSONObject jsonObject2 = null;
-			try {
-
-				JSONObject jsonObject = new JSONObject()
-						.put("email", emailEditText.getText().toString())
-						.put("password", passwordEditText.getText().toString())
-						.put("client_login", "clientlogin");
-				jsonObject2 = new JSONObject().put("user", jsonObject);
-
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-
-			jsonFromServer = jParser.getJSONFromUrlAfterHttpPost(url,
-					jsonObject2);
-		}
 
 		@Override
 		protected Void doInBackground(String... params) {
 			try {
-				postMethod2();
+				String url = GlobalVariable.URL + GlobalVariable.SIGN_IN + ".json";
+				System.out.println("url is   : " + url);
+				JSONObject jsonObject2 = null;
+				try {
+
+					JSONObject jsonObject = new JSONObject()
+							.put("email", emailEditText.getText().toString())
+							.put("password", passwordEditText.getText().toString())
+							.put("client_login", "clientlogin");
+					jsonObject2 = new JSONObject().put("user", jsonObject);
+
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+
+				jsonFromServer = jParser.getJSONFromUrlAfterHttpPost(url,
+						jsonObject2);
+				
 				System.out.println("doInBackground done");
 			} catch (Exception e) {
 				e.printStackTrace();

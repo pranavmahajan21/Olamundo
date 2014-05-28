@@ -18,9 +18,8 @@ import com.example.olamundo.R;
 import com.example.olamundo.imagesfromurl.ImageLoader;
 import com.example.olamundo.models.Members;
 import com.example.olamundo.services.GlobalVariable;
-import com.example.olamundo.services.RoundImageView;
+import com.example.olamundo.services.RoundedCornersSmartImageView;
 import com.example.olamundo.services.RoundedImageView;
-import com.loopj.android.image.SmartImageView;
 
 public class SelectOwnProfileAdapter extends BaseAdapter {
 	private Context context;
@@ -57,7 +56,7 @@ public class SelectOwnProfileAdapter extends BaseAdapter {
 	static class ViewHolder {
 		protected TextView textView;
 //		 protected RoundImageView smartIV;
-		protected SmartImageView smartIV;
+		protected RoundedCornersSmartImageView smartIV;
 		protected ImageView circleImageView;
 
 	}
@@ -77,18 +76,8 @@ public class SelectOwnProfileAdapter extends BaseAdapter {
 			viewHolder.textView = (TextView) convertView
 					.findViewById(R.id.profileName);
 			viewHolder.textView.setTypeface(typeface);
-			viewHolder.smartIV = (SmartImageView) convertView
+			viewHolder.smartIV = (RoundedCornersSmartImageView) convertView
 					.findViewById(R.id.profilePicture);
-			// viewHolder.smartIV.setDrawingCacheEnabled(true);
-			//
-			// viewHolder.smartIV.measure(MeasureSpec.makeMeasureSpec(0,
-			// MeasureSpec.UNSPECIFIED),
-			// MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-			// viewHolder.smartIV.layout(0, 0,
-			// viewHolder.smartIV.getMeasuredWidth(),
-			// viewHolder.smartIV.getMeasuredHeight());
-			//
-			// viewHolder.smartIV.buildDrawingCache(true);
 			viewHolder.circleImageView = (ImageView) convertView
 					.findViewById(R.id.circleImageView);
 			convertView.setTag(viewHolder);
@@ -103,42 +92,14 @@ public class SelectOwnProfileAdapter extends BaseAdapter {
 					.getDrawable());
 			viewHolder.circleImageView.setVisibility(View.INVISIBLE);
 		}
-		// viewHolder.imageView.setImageDrawable(RoundedImageView.getCroppedBitmap(member.get(position).getDrawable(),
-		// 50));
 		else {
 			viewHolder.textView.setText(member.get(position).getName());
 			viewHolder.textView.setTextColor(Color.parseColor("#405581"));
-			// 1st
-			// viewHolder.imageView.setImageDrawable(member.get(position).getDrawable());
-			// imageLoader.displayImage(member.get(position).getImageURL(),
-			// defaultImage, imageView);
-			// viewHolder.imageView.setImageDrawable(imageView.getDrawable());
+
 			System.out.println("image url is   : "
 					+ member.get(position).getImageURL());
-			// 1st
 			viewHolder.smartIV.setImageUrl(member.get(position).getImageURL());
-//			viewHolder.smartIV.setBackground(gd);
-			
-			//2nd
-			// viewHolder.smartIV.setDrawingCacheEnabled(true);
-			// viewHolder.smartIV.measure(MeasureSpec.makeMeasureSpec(0,
-			// MeasureSpec.UNSPECIFIED),
-			// MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-			// viewHolder.smartIV.layout(0, 0,
-			// viewHolder.smartIV.getMeasuredWidth(),
-			// viewHolder.smartIV.getMeasuredHeight());
-			// viewHolder.smartIV.buildDrawingCache(true);
-			
-
-			// 3rd
-			// System.out.println(viewHolder.smartIV.getDrawingCache());
-//			FetchImageAsync async = new FetchImageAsync();
-//			async.execute(member.get(position).getImageURL());
-//			
-//			viewHolder.smartIV.setImageBitmap(RoundedImageView
-//					.getCroppedBitmap(globalVariable
-//							.getBitmapFromDrawable(viewHolder.smartIV
-//									.getDrawable()), 100));
+			viewHolder.smartIV.setRadius(50);
 
 			viewHolder.circleImageView.setVisibility(View.VISIBLE);
 		}

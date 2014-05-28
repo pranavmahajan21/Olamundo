@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -101,7 +100,7 @@ public class TheRealAppActivity extends Activity {
 	private String[] navMenuTitles;
 	private TypedArray navMenuIcons;
 
-	private ArrayList<NavDrawerItem> navDrawerItems;
+	private ArrayList<NavDrawerItem> navDrawerItemList;
 	List<NameValuePair> param;
 
 	Intent intent;
@@ -336,7 +335,7 @@ public class TheRealAppActivity extends Activity {
 		// setting the nav drawer list adapter
 		leftExpandableList.setGroupIndicator(null);
 		leftAdapter = new NavDrawerListAdapter(getApplicationContext(),
-				navDrawerItems, mapChildData);
+				navDrawerItemList, mapChildData);
 		leftExpandableList.setAdapter(leftAdapter);
 		rightAdapter = new SelectChatProfileAdapter(this, members,
 				editOrChatMode);
@@ -455,11 +454,11 @@ public class TheRealAppActivity extends Activity {
 		help.add("page1");
 		help.add("page2");
 
-		mapChildData.put(navDrawerItems.get(0), chatPage); // Header, Child data
-		mapChildData.put(navDrawerItems.get(1), switchProfile);
-		mapChildData.put(navDrawerItems.get(2), contactLocation);
-		mapChildData.put(navDrawerItems.get(3), buy);
-		mapChildData.put(navDrawerItems.get(4), help);
+		mapChildData.put(navDrawerItemList.get(0), chatPage); // Header, Child data
+		mapChildData.put(navDrawerItemList.get(1), switchProfile);
+		mapChildData.put(navDrawerItemList.get(2), contactLocation);
+		mapChildData.put(navDrawerItemList.get(3), buy);
+		mapChildData.put(navDrawerItemList.get(4), help);
 
 	}
 
@@ -501,7 +500,7 @@ public class TheRealAppActivity extends Activity {
 					int groupPosition, long id) {
 				System.out.println("onGroupClick");
 
-				if (mapChildData.get(navDrawerItems.get(groupPosition)).size() == 0)
+				if (mapChildData.get(navDrawerItemList.get(groupPosition)).size() == 0)
 					displayView(groupPosition, -1);
 				return false;
 			}
@@ -524,16 +523,16 @@ public class TheRealAppActivity extends Activity {
 		navMenuIcons = getResources()
 				.obtainTypedArray(R.array.nav_drawer_icons);
 
-		navDrawerItems = new ArrayList<NavDrawerItem>();
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons
+		navDrawerItemList = new ArrayList<NavDrawerItem>();
+		navDrawerItemList.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons
 				.getResourceId(0, -1)));
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons
+		navDrawerItemList.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons
 				.getResourceId(1, -1)));
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons
+		navDrawerItemList.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons
 				.getResourceId(2, -1)));
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
+		navDrawerItemList.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
 				.getResourceId(3, -1)));
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons
+		navDrawerItemList.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons
 				.getResourceId(4, -1), true, "hello"));
 
 		// Recycle the typed array

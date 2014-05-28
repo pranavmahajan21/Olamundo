@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <com.loopj.android.image.SmartImageView
+<!--             com.loopj.android.image.SmartImageView -->
+        <com.example.olamundo.services.RoundedCornersSmartImageView
             android:id="@+id/profilePicture"
             android:layout_width="100dp"
             android:layout_height="100dp" />
@@ -20,7 +21,7 @@
             android:id="@+id/circleImageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/circle_blue2" />
+            android:src="@drawable/circle_blue" />
 
        
     </FrameLayout>

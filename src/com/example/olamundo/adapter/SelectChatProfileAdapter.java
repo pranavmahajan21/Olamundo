@@ -18,9 +18,8 @@ import com.example.olamundo.models.Members;
 
 public class SelectChatProfileAdapter extends BaseAdapter {
 
-//	private RelativeLayout rightDrawerRLData;
-	
-	
+	// private RelativeLayout rightDrawerRLData;
+
 	private Context context;
 	List<Members> member;
 	LayoutInflater inflater;
@@ -32,13 +31,14 @@ public class SelectChatProfileAdapter extends BaseAdapter {
 		this.context = context;
 		this.member = member;
 		this.decider = decider;
-		
-//		rightDrawerRLData = 
+
+		// rightDrawerRLData =
 	}
 
-	public void swapData(List<Members> member)
-	{this.member = member;}
-	
+	public void swapData(List<Members> member) {
+		this.member = member;
+	}
+
 	static class ViewHolder {
 		protected TextView textView;
 		protected ImageView profileImageView;
